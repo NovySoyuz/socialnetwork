@@ -24,8 +24,6 @@ function GetUserIdFromUserAndPassword($username, $password)
   $pdo_prepare->execute(['nickname' => $username]);
   $user = $pdo_prepare->fetch();
 
-  var_dump($user);
-
   if ($user && $password === $user['password']) {
     $_SESSION['userId'] = $user['id'];
     return $user['id'];
